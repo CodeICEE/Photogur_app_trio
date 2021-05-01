@@ -1,6 +1,8 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pictures</h1>
+<h1>Welcome to Photogur!</h1>
 
 <table>
   <thead>
@@ -14,11 +16,13 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
+
+       
         <td><%= picture.title %></td>
-        <td><%= image_tag picture.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href = "<%= picture_url(picture) %>"><%= image_tag picture.url %></a></td>
+        <%# <td><%= link_to 'Show', picture %></td> 
+        <%# <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <%# <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<%= link_to 'Link to a new photo!', new_picture_path %>
