@@ -4,30 +4,23 @@
 
 <h1>Welcome to Photogur!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div> 
+  <h2>Photos </h2>
+</div>
 
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
+<div class = "container">
 
-       
-        <td><%= picture.title %></td>
-        <td><a href = "<%= picture_url(picture) %>"><%= image_tag picture.url %></a></td>
-        <%# <td><%= link_to 'Show', picture %></td> 
-        <%# <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <%# <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class = "row">
+  <% @pictures.each do |picture| %>
+    <div class ="col-6 col-md-4">
+      <a href = "<%= picture_url(picture) %>"><%= image_tag picture.url, :style => "width: 400px" %></a>
+    </div>
+  </div>
 
+
+<% end %>
+</div>
 <br>
 
 <%= link_to 'Link to a new photo!', new_picture_path %>
+
