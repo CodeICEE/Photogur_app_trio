@@ -2,25 +2,24 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Welcome to Photogur!</h1>
+<h1 class = "display-1 text-center" >Gallery</h1>
 
-<div> 
-  <h2>Photos </h2>
+<div class = " display-4 text-center" > 
+  <h2>Photos From Our Users!</h2>
 </div>
 
 <div class = "container">
 
   <div class = "row">
   <% @pictures.each do |picture| %>
-    <div class ="col-6 col-md-4">
-      <a href = "<%= picture_url(picture) %>"><%= image_tag picture.url, :style => "width: 400px" %></a>
-    </div>
+    <div class ="col-6 col-md-4"><a href = "<%= picture_url(picture) %>"><%= image_tag picture.url, :style => "width: 100%" %></a></div>
+    <% end %>  
   </div>
 
 
-<% end %>
+
 </div>
 <br>
 
-<%= link_to 'Link to a new photo!', new_picture_path %>
+<%# <%= link_to 'Link to a new photo!', new_picture_path %>
 
