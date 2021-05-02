@@ -14,21 +14,21 @@
   <br>
   <br>
  
-
+<div class = "bar">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href=  <%= root_path %>  >Photogur!</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= pictures_path%>">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= new_picture_path%>">Link to New Photo</a></li>
                     </ul>
                 </div>
                 <div>
                     <nav>
                       <% if current_user %>
-                        Signed in as <%= current_user.username %> <%= button_to "Logout", '/logout', :method => :get, :class => "btn btn-primary" %>
+                        <h4> Signed in as  </h4> <h5> <%= current_user.username %> </h5> <%= button_to "Logout", '/logout', :method => :get, :class => "btn btn-primary" %>
                       <% else %>
                        <%= button_to 'Login', '/login',:method => :get, :class => "btn btn-primary"  %> <br> <%= button_to 'Signup', '/signup',:method => :get, :class => "btn btn-primary"  %>
                       <% end %>
@@ -36,13 +36,24 @@
                 </div>
             </div>
         </nav>
+</div>
+
+<br><br><br><br>
 
 
-<br><br>
 
 
 
-<br><br><br>
+
     <%= yield %>
   </body>
+
+  <footer >
+            <div class="container">
+                <div class="small text-center text-muted">
+                  
+                    - Created by Vladimir Joseph
+                </div>
+            </div>
+        </footer>
 </html>
