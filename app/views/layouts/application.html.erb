@@ -13,17 +13,36 @@
   <body>
   <br>
   <br>
-  <div>
-      <nav>
-    <% if current_user %>
-      Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
-  </nav>
+ 
 
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href=  <%= root_path %>  >Photogur!</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="<%= new_picture_path%>">Link to New Photo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav>
+                      <% if current_user %>
+                        Signed in as <%= current_user.username %> <%= button_to "Logout", '/logout', :method => :get, :class => "btn btn-primary" %>
+                      <% else %>
+                       <%= button_to 'Login', '/login',:method => :get, :class => "btn btn-primary"  %> <br> <%= button_to 'Signup', '/signup',:method => :get, :class => "btn btn-primary"  %>
+                      <% end %>
+                    </nav>
+                </div>
+            </div>
+        </nav>
 
+
+<br><br>
+
+
+
+<br><br><br>
     <%= yield %>
   </body>
 </html>

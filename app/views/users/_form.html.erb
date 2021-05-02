@@ -10,23 +10,27 @@
       </ul>
     </div>
   <% end %>
-
+  <div class = "text-center">
+  <div class = "center-text" >
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+      <h2> <%= form.label :username %> </h2>
+      <%= form.text_field :username %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <div class="field">
+    <h2> <%= form.label :password %> </h2>
+      <%= form.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+    <div class="field">
+    <h2> <%= form.label :password_confirmation %> </h2>
+      <%= form.password_field :password_confirmation %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit "Let's GO!", :method => :get, :class => "btn btn-primary" %>
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
+ 
